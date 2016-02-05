@@ -1,28 +1,36 @@
-# Compiled Object files
-*.slo
-*.lo
-*.o
-*.obj
+#include <iostream> using namespace std;
+float fToc (float f); 
+// FUNCTION PROTOTYPE 
+void dblByRef (float& bRef); 
+float boxSA (float width = 10, float breadth = 20);
+// note type functionname (type variablename, ...) optionally (type variablename = value, ...)
+template <typename T> // T is substituted by the type of the variables actually passed T Minimum (T v1, T v2, T v3, T v4);
 
-# Precompiled Headers
-*.gch
-*.pch
+int main() { float testvalue = 10; // variable with default value cout<<"Temperature in Farenheit is -4 " << endl; 
+cout<<"Temperature: "<<fToc(-4)<<endl; // endl is end of line so new line output dblByRef(testvalue); 
+cout<<"box surface area default: "<<boxSA()<<endl;
+cout<<"box surface area: "<<boxSA(25, 30)<<endl; cout<<"box surface area partially default: "<<boxSA(30)<<endl; 
+cout<<"smallest value: "<<Minimum(12,14,11,15)<<endl;
+}
 
-# Compiled Dynamic libraries
-*.so
-*.dylib
-*.dll
+float fToc (float f) 
+// FUNCTION DEFINITION 
+{ 
+return (f-32)/9*5;
+// RETURNS THE VALUE CALCULATED }
+void dblByRef (float& bRef) { cout<<"testvalue double by reference is " << bRef << endl; 
+bRef = bRef + bRef; cout<<"result double by reference is " << bRef << endl; 
+}
 
-# Fortran module files
-*.mod
+float boxSA (float width, float breadth) 
+// note default value = part is removed { 
+return width*breadth*6; 
+}
+template <typename T> T Minimum (T v1, T v2, T v3, T v4) { T vMinimum;
+vMinimum = v1;
 
-# Compiled Static libraries
-*.lai
-*.la
-*.a
-*.lib
-
-# Executables
-*.exe
-*.out
-*.app
+if (v2 < vMinimum) vMinimum = v2; 
+if ( v3<vMinimum) vMinimum = v3; 
+if (v4<vMinimum) vMinimum = v4;
+return vMinimum; 
+}
