@@ -1,2 +1,2 @@
 # fToc-Program-in-C-Plus-Plus
-C Program used in tutorials
+C++ Program used in tutorials
